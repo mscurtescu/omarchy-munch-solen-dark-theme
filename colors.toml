@@ -1,0 +1,76 @@
+# Munch Solen — sampled from the UiO Aula TIFF of Edvard Munch, *The Sun*.
+#
+# The mural is the light. Chrome is the rock shadow: cool indigo clefts,
+# cadmium rays for focus, straw halo for type. Roles follow the study map;
+# hexes are from this scan, not the yellow-house JPEG.
+#
+# Semantic names are the source of truth. Compact aliases and color0–color15
+# mirror them for templates and older integrations.
+mode = "dark"
+
+accent = "#C44838"
+hyprland_active_border = "rgba(c44838ee) rgba(c8b040ee) rgba(efe2bfdd) 90deg"
+hyprland_inactive_border = "rgba(2b2e4aaa)"
+
+background = "#1A1E32"
+dark_background = "#141628"
+darker_background = "#0E101C"
+lighter_background = "#32364A"
+
+foreground = "#EFE2BF"
+dark_foreground = "#B3A65E"
+light_foreground = "#F2E8C9"
+bright_foreground = "#F2E8C9"
+
+selection = "#32364A"
+muted = "#9D8669"
+
+red = "#B84838"
+orange = "#C85A38"
+yellow = "#C8B040"
+green = "#6A8144"
+cyan = "#6F798A"
+blue = "#6A7A92"
+magenta = "#795669"
+brown = "#7A6044"
+
+bright_red = "#CC806B"
+bright_yellow = "#D9C677"
+bright_green = "#93A06C"
+bright_cyan = "#9AABA5"
+bright_blue = "#8C96A0"
+bright_magenta = "#A3898B"
+
+# Compact aliases
+bg = "#1A1E32"
+dark_bg = "#141628"
+darker_bg = "#0E101C"
+lighter_bg = "#32364A"
+fg = "#EFE2BF"
+dark_fg = "#B3A65E"
+light_fg = "#F2E8C9"
+bright_fg = "#F2E8C9"
+
+cursor = "#F2E8C9"
+selection_foreground = "#F2E8C9"
+selection_background = "#32364A"
+active_border_color = "#C44838"
+active_tab_background = "#32364A"
+
+# ANSI
+color0 = "#1A1E32"
+color1 = "#B84838"
+color2 = "#6A8144"
+color3 = "#C8B040"
+color4 = "#6A7A92"
+color5 = "#795669"
+color6 = "#6F798A"
+color7 = "#EFE2BF"
+color8 = "#9D8669"
+color9 = "#CC806B"
+color10 = "#93A06C"
+color11 = "#D9C677"
+color12 = "#8C96A0"
+color13 = "#A3898B"
+color14 = "#9AABA5"
+color15 = "#F2E8C9"
