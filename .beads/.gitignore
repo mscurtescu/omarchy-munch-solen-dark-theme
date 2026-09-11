@@ -13,6 +13,10 @@ last-touched
 # Daemon runtime (lock, log, pid)
 daemon.*
 
+# Audit sidecar (local; Dolt is source of truth). bd init tracked an
+# empty copy; status/close still append here on 1.2.2.
+interactions.jsonl
+
 # Push state (runtime, per-machine)
 push-state.json
 
