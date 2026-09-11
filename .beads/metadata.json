@@ -1,0 +1,7 @@
+{
+  "database": "dolt",
+  "backend": "dolt",
+  "dolt_mode": "embedded",
+  "dolt_database": "omarchy_munch_solen_dark_theme",
+  "project_id": "9708c06e-9766-4df4-8945-d64dc242cddc"
+}
