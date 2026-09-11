@@ -43,7 +43,7 @@ Semantic roles in `colors.toml` are the source of truth; `color0`–`color15` mi
 
 ## Wallpaper
 
-`backgrounds/1-solen.jpg` is the official University of Oslo reproduction (museum frame cropped, quality 92). Cover-scaling on a 3:2 panel crops the sides and keeps the sun.
+`backgrounds/1-solen.jpg` is the official University of Oslo reproduction (museum frame cropped, quality 92). Cover-scaling on a 3:2 panel crops the sides and keeps the sun. `backgrounds/2-solen-disk.jpg` (sun-disk close-up) and `backgrounds/3-solen-rays.jpg` (ray texture) are detail crops of the same photograph — cycle with `omarchy theme bg next`.
 
 This image is **not** MIT — see [Licensing](DESIGN.md#licensing-split).
 
