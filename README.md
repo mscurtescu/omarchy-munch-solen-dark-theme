@@ -1,5 +1,7 @@
 # Munch Solen Dark — an Omarchy theme
 
+[![Built for Omarchy: Theme](https://raw.githubusercontent.com/tcballard/omarchy-badges/75975e5b5bf75e7ede3764bcd2950046f7abfe2c/badges/v1/omarchy-theme.svg)](https://github.com/tcballard/omarchy-badges)
+
 A dark Omarchy theme built from Edvard Munch’s Aula mural *The Sun* (*Solen*, 1911). The painting is the light; the chrome is the rock shadow: cool indigo clefts, cadmium rays for focus, straw halo for type. Design notes: [DESIGN.md](DESIGN.md).
 
 ![Munch Solen Dark theme preview](preview.webp)
