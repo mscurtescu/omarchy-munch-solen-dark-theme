@@ -51,12 +51,107 @@ commit URLs, never float `main`), static MIT + CC BY-NC-SA artwork
 shields, `Omarchy Quattro` generation marker. No numeric version claims;
 the tested build is noted in the README if anywhere.
 
+## Hyprland
+
+`colors.toml` carries the ray gradient in `hyprland_active_border` and
+`hyprland_inactive_border`. Omarchy regenerates `hyprland.lua` from those
+keys when it applies a theme installed from git, so the gradient still
+paints. That generated file does not set the shadow or the slow
+`borderangle` loop.
+
+The block below is that surface. It sets the active and inactive border
+on normal windows and on groups, a short shadow, and one full rotation
+of the gradient. `speed = 100` is Hyprland's slowest loop. Layout, binds,
+and input stay upstream.
+
+It cannot live in this repo as `hyprland.lua` or as `hyprland.lua.example`.
+Hyprland loads `hyprland.lua` at login, so `omarchy theme install` drops
+every `*.lua` from a cloned theme. The Omarchy site audit rejects a
+script anywhere in the tree, and a `.example` suffix does not change
+that. A checkout symlinked under `~/.config/omarchy/themes/` is your own
+theme and is staged in full, so save the block there as `hyprland.lua`
+when you want the shadow and the rotating border.
+
+```lua
+-- Munch Solen — Hyprland theme surface.
+--
+-- Visual values only. Layout, binds, and input stay upstream.
+-- Active windows wear the rays (cadmium → yellow → straw). Inactive
+-- windows fall into the rock. A slow borderangle loop turns the gradient
+-- like the disk; disable that leaf on battery if the redraw shows up.
+
+local cadmium = "c44838"
+local yellow = "c8b040"
+local straw = "efe2bf"
+local rock = "2b2e4a"
+local cleft = "0e101c"
+
+local active_border_color = {
+	colors = {
+		"rgba(" .. cadmium .. "ee)",
+		"rgba(" .. yellow .. "ee)",
+		"rgba(" .. straw .. "dd)",
+	},
+	angle = 90,
+}
+local inactive_border_color = "rgba(" .. rock .. "aa)"
+
+hl.config({
+	general = {
+		col = {
+			active_border = active_border_color,
+			inactive_border = inactive_border_color,
+		},
+	},
+
+	group = {
+		col = {
+			border_active = active_border_color,
+			border_inactive = inactive_border_color,
+		},
+	},
+
+	decoration = {
+		shadow = {
+			enabled = true,
+			range = 16,
+			render_power = 3,
+			offset = "0 4",
+			color = "rgba(" .. cleft .. "cc)",
+			color_inactive = "rgba(" .. cleft .. "88)",
+		},
+	},
+})
+
+-- One full rotation of the ray gradient; speed 100 is Hyprland's slowest loop.
+hl.animation({ leaf = "borderangle", enabled = true, speed = 100, bezier = "linear", style = "loop" })
+```
+
 ## Tickets (Beads)
 
 Issue tracking is Beads (`bd`), pin in `.mise.toml` (1.2.2). The shared
 database lives in this repo; issue IDs use the `solen-` prefix.
 `bd dolt push` syncs to `refs/dolt/data` on origin. `bd ready` lists
 unblocked work.
+
+### New clone
+
+Clone both theme repos as siblings. The light repo's `.beads/redirect`
+is `../omarchy-munch-solen-dark-theme/.beads`.
+
+In the dark repo:
+
+```bash
+mise install
+bd dolt pull
+bd hooks install --beads
+```
+
+`mise install` provides `bd` 1.2.2. `bd dolt pull` fetches the issue
+database. `bd hooks install --beads` writes `.beads/hooks/` and sets
+`core.hooksPath` to that directory. Those scripts are gitignored.
+Commit, merge, checkout, and push in the dark repo then call Beads.
+Run `bd` from either checkout.
 
 ## Releasing
 
