@@ -9,6 +9,9 @@ Follows the theme payload in this repo; released by pushing to `master`.
   paints the 3-stop ray gradient. A listed theme may not ship scripts.
 - Stop tracking the Beads git hooks under `.beads/hooks/`. They are local
   authoring tools, not part of the theme.
+- Stop tracking `.claude/settings.json` and `.codex/hooks.json`. They are
+  local Claude Code and Codex hook configs. `bd setup claude` and
+  `bd setup codex` rewrite them.
 - Re-encode the three backgrounds as WebP (`-strip -resize '3840>' -quality 82`):
   the set drops from 6.6 MB to 3.7 MB, with `1-solen` alone going 4.5 MB → 2.4 MB.
 
